@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>后端测试</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
+  </script>
+</head>
+
+<body>
+  <script>
+    $(function () {
+      console.log(11111111111);
+      // get请求
+      $.ajax({
+        type: 'get',
+        url: 'http://localhost:3001/api11',
+        data: { name: 1 },
+        success: function (data) {
+          console.log(data);
+        },
+        error: function (err) {
+          console.log(err);
+        }
+      })
+
+      // post请求
+      //   $.ajax({
+      //     type: 'post',
+      //     url: 'http://localhost:3001/api12',
+      //     data: { name: 'gxy', pass: '111111' },
+      //     success: function (data) {
+      //       console.log(data);
+      //     },
+      //     error: function (err) {
+      //       console.log(err);
+      //     }
+      //   })
+    })
+  </script>
+</body>
+
+</html>

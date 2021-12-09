@@ -26,16 +26,17 @@ export default {
   },
   methods: {
     loginIn(){
-      if(!this.account){
-        alert('账号未输入')
-        return
-      }
-      if(!this.password){
-        alert('密码未输入')
-        return
-      }
-      window.sessionStorage.setItem('token','123')
-      this.$router.push('/shoppingapp')
+      // if(!this.account){
+      //   alert('账号未输入')
+      //   return
+      // }
+      // if(!this.password){
+      //   alert('密码未输入')
+      //   return
+      // }
+      this.$http({methods:'get',url:'http://localhost:3001/api11',params:{name:1}}).then((res)=>{console.log(res);})
+      // window.sessionStorage.setItem('token','123')
+      // this.$router.push('/shoppingapp')
       //后端验证
     },
     makeNew(){
