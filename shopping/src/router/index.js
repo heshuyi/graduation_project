@@ -15,17 +15,51 @@ const routes = [
     name: 'Login',
     component: Login
   },
-  // {懒加载样例
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+
+  {
+    path: '/mine',
+    name: 'Mine',
+    component: () => import('../views/mine/Mine.vue')
+  },
+  {
+    path: '/sell',
+    name: 'sell',
+    component: () => import('../views/sell/Sell.vue')
+  },
+  {
+    path: '/shopping',
+    name: 'Shopping',
+    component: () => import('../views/shopping/Shopping.vue')
+  },
+  {
+    path: '/shoppingapp',
+    name: 'Shoppingapp',
+    redirect: '/purchase',
+    component: () => import('../views/ShoppingApp.vue'),
+    children: [{
+      path: '/purchase',
+      name: 'Purchase',
+      component: () => import('../views/purchase/Purchase.vue')
+    },]
+  }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+router.beforeEach((to, from, next) => {
+  // to 要去的
+  // from 在哪来
+  // next 运行函数
+  if (to.path == '/login')
+    return next()
+  if (!window.sessionStorage.getItem('token')) {
+    next('/login')
+  } else {
+    next()
+  }
 })
 
 export default router
