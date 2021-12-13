@@ -28,17 +28,17 @@
       })
 
       // post请求
-      //   $.ajax({
-      //     type: 'post',
-      //     url: 'http://localhost:3001/api12',
-      //     data: { name: 'gxy', pass: '111111' },
-      //     success: function (data) {
-      //       console.log(data);
-      //     },
-      //     error: function (err) {
-      //       console.log(err);
-      //     }
-      //   })
+      $.ajax({
+        type: 'post',
+        url: 'http://localhost:3001/api12',
+        data: { name: 'gxy', pass: '111111' },
+        success: function (data) {
+          console.log('cheng+0' + data);
+        },
+        error: function (err) {
+          console.log(err);
+        }
+      })
     })
   </script>
 </body>

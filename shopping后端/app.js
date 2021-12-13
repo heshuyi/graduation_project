@@ -24,25 +24,9 @@ app.all('*', function (req, res, next) {
   res.header("Content-Type", "application/json;charset=utf-8");
   next();
 });
-
-var info = [
-  {
-    data: 123,
-    num: 1,
-    age: 11
-  }, {
-    data: 456,
-    num: 2,
-    age: 22
-  }
-];
-
 // 配置接口api
 app.get('/api11', function (req, res) {
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  // res.setHeader('Access-Control-Allow-Credentials', true);
   res.status(200)
-  // res.json(info)
   console.log(req.query);
   res.send(req.query)
 })
@@ -53,8 +37,15 @@ app.post('/api12', function (req, res) {
   console.log(req.url);
   console.log(req.query);
   // res.json(req.body)
-  res.json(info)
+
 })
+//登录账号的
+var callbacks = require('./callBack')
+app.post('/tologin', callbacks.getTelPassword)
+// 注册
+app.post('/registered', callbacks.makeNewUser)
+//我的主页 查看自己信息
+app.get('/getmine', callbacks.getMineInformation)
 
 // 配置服务端口
 var server = app.listen(3001, function () {

@@ -4,4 +4,8 @@
   </div>
 </template>
 <style>
+#app{
+  width: 750rem;
+  overflow-x: hidden;
+}
 </style>

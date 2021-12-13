@@ -16,21 +16,7 @@ const routes = [
     component: Login
   },
 
-  {
-    path: '/mine',
-    name: 'Mine',
-    component: () => import('../views/mine/Mine.vue')
-  },
-  {
-    path: '/sell',
-    name: 'sell',
-    component: () => import('../views/sell/Sell.vue')
-  },
-  {
-    path: '/shopping',
-    name: 'Shopping',
-    component: () => import('../views/shopping/Shopping.vue')
-  },
+
   {
     path: '/shoppingapp',
     name: 'Shoppingapp',
@@ -40,6 +26,21 @@ const routes = [
       path: '/purchase',
       name: 'Purchase',
       component: () => import('../views/purchase/Purchase.vue')
+    },
+      {
+        path: '/mine',
+        name: 'Mine',
+        component: () => import('../views/mine/Mine.vue')
+      },
+      {
+        path: '/sell',
+        name: 'sell',
+        component: () => import('../views/sell/Sell.vue')
+      },
+      {
+        path: '/shopping',
+        name: 'Shopping',
+        component: () => import('../views/shopping/Shopping.vue')
     },]
   }
 ]
