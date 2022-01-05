@@ -6,7 +6,7 @@ function setRem() {
   const scale = document.documentElement.clientWidth / 750
   document.documentElement.style.fontSize = (1 * Math.min(scale, 2)) + 'px'
 }
-// 初始化
+// 初始化进程
 setRem()
 window.onresize = function () {
   setRem()
